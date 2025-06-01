@@ -6,7 +6,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-@TeleOp //(name = "ringyeet (Blocks to Java)")
+@TeleOp
 public class RingYeet extends OpMode {
 
     private DcMotor ringYeetMotor;
@@ -26,12 +26,14 @@ public class RingYeet extends OpMode {
 
     @Override
     public void loop() {
+        //pressing a shoots ring
         if (gamepad1.a) {
             ringYeetMotor.setPower(1);
         } else {
             ringYeetMotor.setPower(0);
         }
 
+        //pressing b intakes ring
         if (gamepad1.b) {
             mainIntake.setPower(-1);
             counterspinMotor.setPower(-1);
@@ -40,12 +42,14 @@ public class RingYeet extends OpMode {
             counterspinMotor.setPower(0);
         }
 
+        //pressing the right bumper makes intake move up
         if (gamepad1.right_bumper) {
             bigGearSlowMotor.setPower(0.5);
         } else {
             bigGearSlowMotor.setPower(0);
         }
 
+        //pressing the left bumper makes intake move down
         if (gamepad1.left_bumper) {
             bigGearSlowMotor.setPower(-0.5);
         } else {
