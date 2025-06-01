@@ -42,14 +42,14 @@ public class RingYeet extends OpMode {
             counterspinMotor.setPower(0);
         }
 
-        //pressing the right bumper makes intake move up
+        //pressing the right bumper makes intake move down
         if (gamepad1.right_bumper) {
             bigGearSlowMotor.setPower(0.5);
         } else {
             bigGearSlowMotor.setPower(0);
         }
 
-        //pressing the left bumper makes intake move down
+        //pressing the left bumper makes intake move up
         if (gamepad1.left_bumper) {
             bigGearSlowMotor.setPower(-0.5);
         } else {
